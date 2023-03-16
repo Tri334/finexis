@@ -13,6 +13,7 @@ class DisclaimerClass extends StatefulWidget {
 class _DisclaimerClassState extends State<DisclaimerClass> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -87,13 +88,18 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                         fontSize: 16, fontWeight: FontWeight.w700),
                   )
                 ],
-              ) // Text(data)
-              // const SizedBox(height: 16),
-              // const Dummy02(),
-              // const SizedBox(height: 16),
-              // const Dummy03(),
-              // const SizedBox(height: 16),
-              // const Dummy04(),
+              ),
+              const SizedBox(height: 48),
+              Container(
+                width: screenWidth,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Accept & Continue",
+                      style: GoogleFonts.roboto(
+                          fontSize: 18, fontWeight: FontWeight.w500),
+                    )),
+              )
             ],
           ),
         ),
