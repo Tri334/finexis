@@ -1,3 +1,5 @@
+import 'package:finexis/launchModule/ui/welcome.dart';
+import 'package:finexis/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +13,7 @@ class DisclaimerClass extends StatefulWidget {
 }
 
 class _DisclaimerClassState extends State<DisclaimerClass> {
+  bool isChecking = false;
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -75,10 +78,10 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
               Row(
                 children: [
                   Checkbox(
-                    value: false,
-                    onChanged: (value) {
+                    value: isChecking,
+                    onChanged: (isChecked) {
                       setState(() {
-                        value = true;
+                        isChecking == isChecked;
                       });
                     },
                   ),
@@ -90,10 +93,19 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                 ],
               ),
               const SizedBox(height: 48),
-              Container(
+              SizedBox(
                 width: screenWidth,
+                height: 65,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: colorpalette.primaryTeal),
+                    onPressed: () {
+                      setState(() {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const WelcomeClass()));
+                      });
+                    },
                     child: Text(
                       "Accept & Continue",
                       style: GoogleFonts.roboto(

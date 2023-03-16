@@ -7,7 +7,8 @@ class ColorPalette {
       secondary03,
       secondary04,
       secondary05,
-      secondary06;
+      secondary06,
+      primaryTeal;
 
   ColorPalette({
     required this.primary01,
@@ -19,6 +20,7 @@ class ColorPalette {
     required this.secondary04,
     required this.secondary05,
     required this.secondary06,
+    required this.primaryTeal,
   });
 }
 
@@ -32,6 +34,7 @@ var colorpalette = ColorPalette(
   secondary04: const Color(0xFFDBDFE0),
   secondary05: const Color(0xff4e5180),
   secondary06: const Color(0xff001c3d),
+  primaryTeal: const Color(0xff0E7471),
 );
 
 class DecorationLanding {
