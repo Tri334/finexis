@@ -103,35 +103,3 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
     );
   }
 }
-
-// Scaffold(
-//           body: navList.elementAt(nowPage),
-//           bottomNavigationBar: FloatingNavbar(
-//             items: [
-//               FloatingNavbarItem(icon: Icons.home, title: 'Home'),
-//               FloatingNavbarItem(
-//                   icon: Icons.folder_open_outlined, title: 'Portfolio'),
-//               FloatingNavbarItem(
-//                   icon: Icons.receipt_long_outlined, title: 'Orders'),
-//               FloatingNavbarItem(icon: Icons.person_outline, title: 'Profile'),
-//             ],
-//             currentIndex: nowPage,
-//             onTap: changePage,
-//             backgroundColor: colorpalette.primary03,
-//             unselectedItemColor: colorpalette.secondary06,
-//             selectedItemColor: colorpalette.primaryTeal,
-//           ),
-//         ),
-
-// Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-//             children: [
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: [
-//                   Image.asset("images/logo_finexis.png", scale: 48,),
-//                   IconButton(onPressed: (){}, icon: const Icon(Icons.mail_outline, size: 48,))
-//                 ],
-//               )
-//             ],
-//           ),
