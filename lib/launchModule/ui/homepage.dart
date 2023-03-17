@@ -38,8 +38,8 @@ class HomepageUICLass extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 32),
-              TitleClass()
+              const SizedBox(height: 32),
+              const TitleClass()
             ],
           ),
         ),
@@ -81,7 +81,7 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
             image: DecorationImage(
                 image: AssetImage("images/Loading BG.png"), fit: BoxFit.cover)),
         child: Scaffold(
-          backgroundColor: Color.fromARGB(0, 0, 0, 0),
+          backgroundColor: const Color.fromARGB(0, 0, 0, 0),
           body: navList.elementAt(nowPage),
           bottomNavigationBar: FloatingNavbar(
             items: [

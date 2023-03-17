@@ -37,7 +37,7 @@ class TitleClass extends StatelessWidget {
               width: 125,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: colorpalette.primary03),
+                    elevation: 0, backgroundColor: colorpalette.primary03),
                 onPressed: () {},
                 child: Text(
                   "Sign in now",
@@ -55,6 +55,7 @@ class TitleClass extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: colorpalette.primaryTeal,
+                    elevation: 0,
                     side: BorderSide(color: colorpalette.primary03)),
                 onPressed: () {},
                 child: Text(
@@ -68,7 +69,7 @@ class TitleClass extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Text(
           strategy,
           style: GoogleFonts.roboto(
