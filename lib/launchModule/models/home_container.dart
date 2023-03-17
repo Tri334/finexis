@@ -9,11 +9,11 @@ class HomeNotLoginClass extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(top: 300),
+          margin: const EdgeInsets.only(top: 300),
           decoration: BoxDecoration(
               color: colorpalette.secondary04,
               borderRadius:
-                  BorderRadius.vertical(top: Radius.elliptical(25, 25))),
+                  const BorderRadius.vertical(top: Radius.elliptical(25, 25))),
         ),
       ],
     );
