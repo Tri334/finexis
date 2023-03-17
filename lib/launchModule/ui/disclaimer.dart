@@ -79,16 +79,18 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                 children: [
                   Checkbox(
                     value: isChecking,
-                    onChanged: (isChecked) {
+                    onChanged: (cleared) {
                       setState(() {
-                        isChecking == isChecked;
+                        isChecking = cleared!;
                       });
                     },
                   ),
-                  Text(
-                    checkBoxText,
-                    style: GoogleFonts.roboto(
-                        fontSize: 16, fontWeight: FontWeight.w700),
+                  Expanded(
+                    child: Text(
+                      checkBoxText,
+                      style: GoogleFonts.roboto(
+                          fontSize: 16, fontWeight: FontWeight.w700),
+                    ),
                   )
                 ],
               ),
@@ -99,13 +101,13 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: colorpalette.primaryTeal),
-                    onPressed: () {
+                    onPressed: isChecking ? () {
                       setState(() {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const WelcomeClass()));
                       });
-                    },
+                    } : null,
                     child: Text(
                       "Accept & Continue",
                       style: GoogleFonts.roboto(
