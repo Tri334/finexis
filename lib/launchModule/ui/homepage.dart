@@ -1,8 +1,8 @@
+import 'package:finexis/launchModule/models/head_homepage.dart';
+import 'package:finexis/launchModule/models/home_container.dart';
 import 'package:finexis/models/color_palette.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-
-import '../models/dummy_home.dart';
 
 class HomepageUICLass extends StatelessWidget {
   const HomepageUICLass({super.key});
@@ -14,35 +14,8 @@ class HomepageUICLass extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("images/Loading BG.png"), fit: BoxFit.cover)),
-      child: Scaffold(
-        backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    "images/logo_finexis.png",
-                    scale: 54,
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.mail_outline,
-                      size: 32,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 32),
-              const TitleClass()
-            ],
-          ),
-        ),
+      child: Stack(
+        children: [HeadHomeClass(), HomeNotLoginClass()],
       ),
     );
   }
@@ -77,9 +50,7 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/Loading BG.png"), fit: BoxFit.cover)),
+        color: colorpalette.secondary04,
         child: Scaffold(
           backgroundColor: const Color.fromARGB(0, 0, 0, 0),
           body: navList.elementAt(nowPage),
