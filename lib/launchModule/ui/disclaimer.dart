@@ -1,5 +1,4 @@
 import 'package:finexis/launchModule/ui/homepage.dart';
-import 'package:finexis/launchModule/ui/welcome.dart';
 import 'package:finexis/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -104,7 +103,7 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                         backgroundColor: colorpalette.primaryTeal),
                     onPressed: isChecking ? () {
                       setState(() {
-                        runApp(const HomepageClass());
+                        runApp(const BottomNavigationClass());
                         // Navigator.of(context).push(MaterialPageRoute(
                         //     builder: (BuildContext context) =>
                         //         const WelcomeClass()));
