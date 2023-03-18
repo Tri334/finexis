@@ -63,6 +63,8 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
                   icon: Icons.receipt_long_outlined, title: 'Orders'),
               FloatingNavbarItem(icon: Icons.person_outline, title: 'Profile'),
             ],
+            elevation: 0,
+            borderRadius: 25,
             currentIndex: nowPage,
             onTap: changePage,
             backgroundColor: colorpalette.primary03,

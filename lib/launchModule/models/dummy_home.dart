@@ -17,14 +17,14 @@ class TitleClass extends StatelessWidget {
       children: [
         Text(welcome,
             textAlign: TextAlign.left,
-            style: GoogleFonts.roboto(
+            style: GoogleFonts.openSans(
                 fontSize: 32,
                 fontWeight: FontWeight.w700,
                 color: colorpalette.primary03)),
         const SizedBox(height: 8),
         Text(headdesc,
             textAlign: TextAlign.left,
-            style: GoogleFonts.roboto(
+            style: GoogleFonts.openSans(
                 fontSize: 16,
                 fontWeight: FontWeight.w300,
                 color: colorpalette.primary03)),
@@ -41,7 +41,7 @@ class TitleClass extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   "Sign in now",
-                  style: GoogleFonts.roboto(
+                  style: GoogleFonts.openSans(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: colorpalette.primaryTeal),
@@ -60,7 +60,7 @@ class TitleClass extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   "Login",
-                  style: GoogleFonts.roboto(
+                  style: GoogleFonts.openSans(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: colorpalette.primary03),
@@ -72,7 +72,7 @@ class TitleClass extends StatelessWidget {
         const SizedBox(height: 15),
         Text(
           strategy,
-          style: GoogleFonts.roboto(
+          style: GoogleFonts.openSans(
               fontSize: 24,
               fontWeight: FontWeight.w300,
               color: colorpalette.primary03),
