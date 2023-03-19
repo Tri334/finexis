@@ -50,7 +50,7 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
-        color: colorpalette.secondary04,
+        color: Color.fromARGB(255, 235, 235, 235),
         child: Scaffold(
           backgroundColor: const Color.fromARGB(0, 0, 0, 0),
           body: navList.elementAt(nowPage),

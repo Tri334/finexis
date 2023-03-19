@@ -13,7 +13,7 @@ class HomeNotLoginClass extends StatelessWidget {
           height: double.maxFinite,
           margin: const EdgeInsets.only(top: 320),
           decoration: BoxDecoration(
-            color: colorpalette.secondary04,
+            color: Color.fromARGB(255, 235, 235, 235),
             borderRadius: const BorderRadius.vertical(
               top: Radius.elliptical(25, 25),
             ),
