@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:google_fonts/google_fonts.dart';
 
 class FontComponent{
   TextStyle size16Bold, size16Light, size18Bold, size18Light, size24Bold, size24Light,  size32Bold, size32Light;

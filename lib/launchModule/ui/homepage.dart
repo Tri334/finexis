@@ -9,13 +9,13 @@ class HomepageUICLass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _screenWidth = MediaQuery.of(context).size.width;
+    // final _screenWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("images/Loading BG.png"), fit: BoxFit.cover)),
       child: Stack(
-        children: [HeadHomeClass(), HomeNotLoginClass()],
+        children: const [HeadHomeClass(), HomeNotLoginClass()],
       ),
     );
   }
@@ -50,7 +50,7 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
-        color: Color.fromARGB(255, 235, 235, 235),
+        color: const Color.fromARGB(255, 235, 235, 235),
         child: Scaffold(
           backgroundColor: const Color.fromARGB(0, 0, 0, 0),
           body: navList.elementAt(nowPage),

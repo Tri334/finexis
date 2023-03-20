@@ -2,18 +2,41 @@ import 'package:finexis/launchModule/ui/homepage.dart';
 import 'package:finexis/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/dummy.dart';
 
 class DisclaimerClass extends StatefulWidget {
-  const DisclaimerClass({super.key});
+  DisclaimerClass({super.key});
 
   @override
   State<DisclaimerClass> createState() => _DisclaimerClassState();
 }
 
 class _DisclaimerClassState extends State<DisclaimerClass> {
+  SharedPreferences? savePrefs;
+
+  @override
+  void initState() {
+    super.initState();
+    setDisclaimer();
+  }
+
+  Future <void> setDisclaimer() async {
+    final savePrefs = await SharedPreferences.getInstance();
+    savePrefs.setBool("acceptedTerm", isChecking);
+  }
+
+  Future <void> getDisclaimer() async {
+    final savePrefs = await SharedPreferences.getInstance();
+    bool checkTerm = savePrefs.containsKey("acceptedTerm");
+    if (checkTerm == true){
+      runApp(BottomNavigationClass());
+    }
+  }
+
   bool isChecking = false;
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -101,14 +124,16 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: colorpalette.primaryTeal),
-                    onPressed: isChecking ? () {
-                      setState(() {
-                        runApp(const BottomNavigationClass());
-                        // Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (BuildContext context) =>
-                        //         const WelcomeClass()));
-                      });
-                    } : null,
+                    onPressed: isChecking
+                        ? () {
+                            setState(() {
+                              runApp(const BottomNavigationClass());
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (BuildContext context) =>
+                              //         const WelcomeClass()));
+                            });
+                          }
+                        : null,
                     child: Text(
                       "Accept & Continue",
                       style: GoogleFonts.roboto(
@@ -122,3 +147,4 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
     );
   }
 }
+

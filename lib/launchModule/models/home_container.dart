@@ -1,4 +1,3 @@
-import 'package:finexis/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,9 +11,9 @@ class HomeNotLoginClass extends StatelessWidget {
         Container(
           height: double.maxFinite,
           margin: const EdgeInsets.only(top: 320),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color.fromARGB(255, 235, 235, 235),
-            borderRadius: const BorderRadius.vertical(
+            borderRadius: BorderRadius.vertical(
               top: Radius.elliptical(25, 25),
             ),
           ),
