@@ -108,34 +108,35 @@ class HyperlinkLoginClass extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Color.fromARGB(186, 235, 235, 235),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(100),
+      child: Center(
         child: Text.rich(
-          TextSpan(children: [
-            TextSpan(
-              text: 'Please ',
-              style: GoogleFonts.openSans(
-                  fontSize: 18, fontWeight: FontWeight.w300),
-            ),
-            WidgetSpan(
-              child: GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const LoginClass(),
-                )),
-                child: Text(
-                  "Sign in",
-                  style: GoogleFonts.openSans(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.blueAccent),
+          TextSpan(
+            children: [
+              TextSpan(
+                text: 'Please ',
+                style: GoogleFonts.openSans(
+                    fontSize: 18, fontWeight: FontWeight.w300),
+              ),
+              WidgetSpan(
+                child: GestureDetector(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const LoginClass(),
+                  )),
+                  child: Text(
+                    "Sign in",
+                    style: GoogleFonts.openSans(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.blueAccent),
+                  ),
                 ),
               ),
-            ),
-            TextSpan(
-                text: " to access all features",
-                style: GoogleFonts.openSans(
-                    fontSize: 18, fontWeight: FontWeight.w300))
-          ]),
+              TextSpan(
+                  text: " to access all features",
+                  style: GoogleFonts.openSans(
+                      fontSize: 18, fontWeight: FontWeight.w300))
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:finexis/loginModule/ui/login_page.dart';
 import 'package:finexis/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,7 +58,11 @@ class TitleClass extends StatelessWidget {
                     backgroundColor: colorpalette.primaryTeal,
                     elevation: 0,
                     side: BorderSide(color: colorpalette.primary03)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const LoginClass(),
+                  ));
+                },
                 child: Text(
                   "Login",
                   style: GoogleFonts.openSans(
