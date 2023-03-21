@@ -11,9 +11,7 @@ class HomepageUICLass extends StatelessWidget {
   Widget build(BuildContext context) {
     // final _screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("images/Loading BG.png"), fit: BoxFit.cover)),
+      decoration: const BoxDecoration(color: Color(0xff004B49)),
       child: Stack(
         children: const [HeadHomeClass(), HomeNotLoginClass()],
       ),
