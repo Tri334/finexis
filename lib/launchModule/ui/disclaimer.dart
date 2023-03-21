@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/dummy.dart';
 
 class DisclaimerClass extends StatefulWidget {
-  DisclaimerClass({super.key});
+  const DisclaimerClass({super.key});
 
   @override
   State<DisclaimerClass> createState() => _DisclaimerClassState();
@@ -22,16 +22,16 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
     setDisclaimer();
   }
 
-  Future <void> setDisclaimer() async {
+  Future<void> setDisclaimer() async {
     final savePrefs = await SharedPreferences.getInstance();
     savePrefs.setBool("acceptedTerm", isChecking);
   }
 
-  Future <void> getDisclaimer() async {
+  Future<void> getDisclaimer() async {
     final savePrefs = await SharedPreferences.getInstance();
     bool checkTerm = savePrefs.containsKey("acceptedTerm");
-    if (checkTerm == true){
-      runApp(BottomNavigationClass());
+    if (checkTerm == true) {
+      runApp(const BottomNavigationClass());
     }
   }
 
@@ -147,4 +147,3 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
     );
   }
 }
-

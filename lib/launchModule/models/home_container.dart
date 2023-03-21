@@ -1,7 +1,6 @@
 import 'package:finexis/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../loginModule/ui/login_page.dart';
 
 class HomeNotLoginClass extends StatelessWidget {
@@ -106,11 +105,11 @@ class HyperlinkLoginClass extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       height: double.maxFinite,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color.fromARGB(186, 235, 235, 235),
       ),
       child: Padding(
-        padding: EdgeInsets.all(100),
+        padding: const EdgeInsets.all(100),
         child: Text.rich(
           TextSpan(children: [
             TextSpan(
@@ -121,7 +120,7 @@ class HyperlinkLoginClass extends StatelessWidget {
             WidgetSpan(
               child: GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => LoginClass(),
+                  builder: (context) => const LoginClass(),
                 )),
                 child: Text(
                   "Sign in",

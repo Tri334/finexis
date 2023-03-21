@@ -78,14 +78,14 @@ class _LoginFieldClassState extends State<LoginFieldClass> {
                 },
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             SizedBox(
               height: 50,
               width: screenWidth - 20,
               child: TextFormField(
                 obscureText: securePass,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelText: "Your Password",
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -118,6 +118,7 @@ class _LoginFieldClassState extends State<LoginFieldClass> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
+                    // ignore: avoid_print
                     print("Email: $_email\nPassword: $_password");
                   }
                 },
@@ -128,7 +129,7 @@ class _LoginFieldClassState extends State<LoginFieldClass> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             SizedBox(
               height: 50,
               width: screenWidth - 20,
