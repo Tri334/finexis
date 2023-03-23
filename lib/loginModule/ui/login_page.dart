@@ -89,7 +89,7 @@ class _LoginFieldClassState extends State<LoginFieldClass> {
                   labelText: "Your Password",
                   suffixIcon: IconButton(
                     icon: Icon(
-                        securePass ? Icons.visibility : Icons.visibility_off),
+                        securePass ? Icons.visibility_off : Icons.visibility),
                     onPressed: () {
                       setState(() {
                         securePass = !securePass;

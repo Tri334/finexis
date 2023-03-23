@@ -1,13 +1,21 @@
 import 'package:finexis/launchModule/ui/homepage.dart';
 import 'package:finexis/models/color_palette.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../models/dummy.dart';
 
+final Uri _url = Uri.parse('https://sso.agc.gov.sg/Act/SFA2001');
+Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not reach $_url');
+  }
+}
+
 class DisclaimerClass extends StatefulWidget {
-  const DisclaimerClass({super.key});
+  DisclaimerClass({super.key});
 
   @override
   State<DisclaimerClass> createState() => _DisclaimerClassState();
@@ -19,20 +27,12 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
   @override
   void initState() {
     super.initState();
-    setDisclaimer();
+    setValue(true);
   }
 
-  Future<void> setDisclaimer() async {
-    final savePrefs = await SharedPreferences.getInstance();
-    savePrefs.setBool("acceptedTerm", isChecking);
-  }
-
-  Future<void> getDisclaimer() async {
-    final savePrefs = await SharedPreferences.getInstance();
-    bool checkTerm = savePrefs.containsKey("acceptedTerm");
-    if (checkTerm == true) {
-      runApp(const BottomNavigationClass());
-    }
+  Future<void> setValue(bool myBool) async {
+    savePrefs = await SharedPreferences.getInstance();
+    savePrefs!.setBool("accTerm", myBool);
   }
 
   bool isChecking = false;
@@ -72,10 +72,25 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                     fontSize: 20, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 16),
-              Text(
-                accreditedBody,
-                style: GoogleFonts.roboto(
-                    fontSize: 16, fontWeight: FontWeight.w300),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(text: accreditedBody),
+                    TextSpan(
+                        text: linkAccredited,
+                        style: GoogleFonts.openSans(
+                            color: Colors.blueAccent,
+                            fontStyle: FontStyle.italic),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            _launchUrl();
+                          }),
+                  ],
+                  style: GoogleFonts.openSans(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.black),
+                ),
               ),
               const SizedBox(height: 16),
               Text(
@@ -126,11 +141,12 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                         backgroundColor: colorpalette.primaryTeal),
                     onPressed: isChecking
                         ? () {
+                            initState();
                             setState(() {
-                              runApp(const BottomNavigationClass());
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //     builder: (BuildContext context) =>
-                              //         const WelcomeClass()));
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          const BottomNavigationClass()));
                             });
                           }
                         : null,
