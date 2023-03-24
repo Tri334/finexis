@@ -42,5 +42,17 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+<<<<<<< Updated upstream
 lib/salman.dart
 lib/dewa.dart
+=======
+lib/dewa.dart
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+linux/flutter/generated_plugins.cmake
+windows/flutter/generated_plugins.cmake
+windows/flutter/generated_plugin_registrant.h
+>>>>>>> Stashed changes
