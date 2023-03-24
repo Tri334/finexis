@@ -23,19 +23,17 @@ class DisclaimerClass extends StatefulWidget {
 
 class _DisclaimerClassState extends State<DisclaimerClass> {
   SharedPreferences? savePrefs;
-
-  @override
-  void initState() {
-    super.initState();
-    setValue(true);
-  }
-
-  Future<void> setValue(bool myBool) async {
-    savePrefs = await SharedPreferences.getInstance();
-    savePrefs!.setBool("accTerm", myBool);
-  }
-
   bool isChecking = false;
+
+  Future<void> setCondition() async {
+    final loaded = await SharedPreferences.getInstance();
+    if (loaded.containsKey("accTemp")) {
+      loaded.clear();
+    }
+    final bool accTemp = isChecking;
+    loaded.setBool("accTemp", accTemp);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +118,7 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                     onChanged: (cleared) {
                       setState(() {
                         isChecking = cleared!;
+                        setCondition();
                       });
                     },
                   ),
@@ -141,7 +140,7 @@ class _DisclaimerClassState extends State<DisclaimerClass> {
                         backgroundColor: colorpalette.primaryTeal),
                     onPressed: isChecking
                         ? () {
-                            initState();
+                            // initState();
                             setState(() {
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(

@@ -54,7 +54,7 @@ class _BottomNavigationClassState extends State<BottomNavigationClass> {
           body: navList.elementAt(nowPage),
           bottomNavigationBar: FloatingNavbar(
             items: [
-              FloatingNavbarItem(icon: Icons.home, title: 'Home'),
+              FloatingNavbarItem(icon: Icons.home_rounded, title: 'Home'),
               FloatingNavbarItem(
                   icon: Icons.folder_open_outlined, title: 'Portfolio'),
               FloatingNavbarItem(

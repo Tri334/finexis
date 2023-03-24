@@ -62,7 +62,8 @@ class _TabSwitcherClassState extends State<TabSwitcherClass>
 
   @override
   Widget build(BuildContext context) {
-    return TabBar(
+    return Column(
+      children: [TabBar(
         unselectedLabelColor: colorpalette.secondary06,
         labelColor: colorpalette.primaryTeal,
         controller: tabController,
@@ -79,21 +80,16 @@ class _TabSwitcherClassState extends State<TabSwitcherClass>
             style:
                 GoogleFonts.openSans(fontSize: 20, fontWeight: FontWeight.w500),
           ),
-        ]);
-    // TabBarView(controller: tabController, children: [
-    //   Text(
-    //     "Meranti",
-    //     style: GoogleFonts.openSans(fontSize: 20, fontWeight: FontWeight.w500),
-    //   ),
-    //   Text(
-    //     "FAM",
-    //     style: GoogleFonts.openSans(fontSize: 20, fontWeight: FontWeight.w500),
-    //   ),
-    //   Text(
-    //     "Alternavt",
-    //     style: GoogleFonts.openSans(fontSize: 20, fontWeight: FontWeight.w500),
-    //   )
-    // ]);
+        ],
+      ),
+      // TabBarView(
+      //   controller: tabController,
+      //   children: [
+      //   Text("Meranti content"),
+      //   Text("FAM Content")
+      // ],),
+      ],
+    );
   }
 }
 
