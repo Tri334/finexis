@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:finexis/bloc_observer.dart';
+import 'package:finexis/dewa.dart';
 import 'package:finexis/launchModule/ui/disclaimer.dart';
 import 'package:finexis/launchModule/ui/homepage.dart';
 import 'package:flutter/material.dart';
@@ -14,4 +15,3 @@ void main() {
   Bloc.observer = MyBlocObserver();
   runApp(MyApp());
 }
-

@@ -1,19 +1,24 @@
 import 'dart:ui';
 
+class FontComponent {
+  TextStyle size16Bold,
+      size16Light,
+      size18Bold,
+      size18Light,
+      size24Bold,
+      size24Light,
+      size32Bold,
+      size32Light;
 
-class FontComponent{
-  TextStyle size16Bold, size16Light, size18Bold, size18Light, size24Bold, size24Light,  size32Bold, size32Light;
-
-  FontComponent({
-    required this.size16Bold,
-    required this.size16Light,
-    required this.size18Bold,
-    required this.size18Light,
-    required this.size24Bold,
-    required this.size24Light,
-    required this.size32Bold,
-    required this.size32Light
-  });
+  FontComponent(
+      {required this.size16Bold,
+      required this.size16Light,
+      required this.size18Bold,
+      required this.size18Light,
+      required this.size24Bold,
+      required this.size24Light,
+      required this.size32Bold,
+      required this.size32Light});
 }
 
 var fontComponent = FontComponent(
