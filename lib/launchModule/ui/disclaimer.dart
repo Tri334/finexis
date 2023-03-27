@@ -15,7 +15,7 @@ Future<void> _launchUrl() async {
 }
 
 class DisclaimerClass extends StatefulWidget {
-  DisclaimerClass({super.key});
+  const DisclaimerClass({super.key});
 
   @override
   State<DisclaimerClass> createState() => _DisclaimerClassState();

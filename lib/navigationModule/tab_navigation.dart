@@ -1,6 +1,6 @@
+import 'package:finexis/launchModule/ui/home_content.dart';
 import 'package:finexis/models/fontstyle.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 import '../models/color_palette.dart';
 
@@ -14,10 +14,6 @@ class TabSwitcher extends StatefulWidget {
 class _TabSwitcherState extends State<TabSwitcher>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
-
-  // Future<List<dynamic>> fetchContent() async{
-  //   final response = await http.get(Uri.parse("uri"))
-  // }
 
   @override
   void initState() {
@@ -56,7 +52,7 @@ class _TabSwitcherState extends State<TabSwitcher>
           padding: const EdgeInsets.only(top: 50.0),
           child: TabBarView(
             controller: tabController,
-            children: [Text("Meranti Content", ), Text("FAM Content")],
+            children: const [MerantiContent(), FamContent()],
           ),
         ),
       ],

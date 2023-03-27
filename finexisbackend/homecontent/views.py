@@ -1,8 +1,19 @@
-from rest_framework import viewsets
-from .models import TbMeranti
-from .serializers import TbMerantiSerializer
+from rest_framework import generics
+from .models import TbMeranti, TbFam
+from .serializers import TbMerantiSerializer, TbFamSerializer
 
-class TbMerantiViewClass(viewsets.ModelViewSet):
-    query_meranti = TbMeranti.objects.all()
-    meranti_serializer = TbMerantiSerializer
-# Create your views here.
+class TbMerantiList(generics.ListCreateAPIView):
+    queryset = TbMeranti.objects.all()
+    serializer_class = TbMerantiSerializer
+
+class TbMerantiDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TbMeranti.objects.all()
+    serializer_class = TbMerantiSerializer
+
+class TbFamList(generics.ListCreateAPIView):
+    queryset = TbFam.objects.all()
+    serializer_class = TbFamSerializer
+
+class TbFamDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = TbFam.objects.all()
+    serializer_class = TbFamSerializer

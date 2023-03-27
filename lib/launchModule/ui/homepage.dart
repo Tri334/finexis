@@ -2,6 +2,7 @@ import 'package:finexis/models/fontstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../loginModule/ui/login_page.dart';
+import '../../loginModule/ui/signup_page.dart';
 import '../../models/color_palette.dart';
 import '../../navigationModule/tab_navigation.dart';
 import '../models/dummy_home.dart';
@@ -82,7 +83,9 @@ class HomeTitle extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     elevation: 0, backgroundColor: colorpalette.primary03),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const SignUp(),));
+                },
                 child: Text(
                   "Sign up now",
                   style: GoogleFonts.roboto(

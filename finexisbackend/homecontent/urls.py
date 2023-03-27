@@ -1,10 +1,9 @@
-from django.urls import include, path
-from rest_framework import routers
-from .views import TbMerantiViewClass
-
-router = routers.DefaultRouter()
-router.register(r'meratimodels', TbMerantiViewClass)
+from django.urls import path
+from .views import TbMerantiList, TbMerantiDetail, TbFamList, TbFamDetail
 
 urlpatterns = [
-    path('meranti', include(router.urls))
+    path('listmeranti/', TbMerantiList.as_view()),
+    path('listmeranti/<int:pk>/', TbMerantiDetail.as_view()),
+    path('listfam/', TbFamList.as_view()),
+    path('listfam/<int:pk>', TbFamDetail.as_view()),
 ]
