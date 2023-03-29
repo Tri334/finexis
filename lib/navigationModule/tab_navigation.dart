@@ -1,3 +1,4 @@
+// import 'package:finexis/bloc/fam_bloc.dart';
 import 'package:finexis/launchModule/ui/home_content.dart';
 import 'package:finexis/models/fontstyle.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class _TabSwitcherState extends State<TabSwitcher>
           padding: const EdgeInsets.only(top: 50.0),
           child: TabBarView(
             controller: tabController,
-            children: const [MerantiContent(), FamContent()],
+            children: [MerantiContent(), FamLoaded()],
           ),
         ),
       ],

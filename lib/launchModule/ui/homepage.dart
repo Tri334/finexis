@@ -155,10 +155,10 @@ class HomeContent extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.0),
                 child: TabSwitcher(),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 50.0),
-                child: HomeToLogin(),
-              )
+              // Padding(
+              //   padding: EdgeInsets.only(top: 50.0),
+              //   child: HomeToLogin(),
+              // )
             ],
           ),
         ),
