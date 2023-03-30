@@ -1,4 +1,7 @@
+import 'package:finexis/loginModule/ui/forgot_password.dart';
+import 'package:finexis/loginModule/ui/signup_page.dart';
 import 'package:finexis/models/color_palette.dart';
+import 'package:finexis/models/fontstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -161,7 +164,47 @@ class _LoginFieldClassState extends State<LoginFieldClass> {
                   ),
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 10),
+            Text.rich(
+              TextSpan(
+                children: [
+                  WidgetSpan(
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ForgotPassword(),
+                        ),
+                      ),
+                      child: Text(
+                        "Forgot password",
+                        style: GoogleFonts.roboto(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300,
+                            color: colorpalette.primaryTeal),
+                      ),
+                    ),
+                  ),
+                  TextSpan(text: " or ", style: GoogleFonts.roboto(fontSize:14, fontWeight: FontWeight.w300, color: colorpalette.secondary05)),
+                  WidgetSpan(
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => SignUp(),
+                        ),
+                      ),
+                      child: Text(
+                        "Sign up",
+                        style: GoogleFonts.roboto(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300,
+                            color: colorpalette.primaryTeal),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
